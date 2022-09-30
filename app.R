@@ -15,6 +15,7 @@ library(magrittr) #
 library(dplyr) #
 library(stringr) #
 library(forcats) #
+library(here)
 
 #Package Coverage Test
 #library(rstudioapi)
@@ -26,9 +27,10 @@ source("figure_helper.R")
 source("table_helper.R")
 
 #Load data and split out cancelled dates
-#i_am("app.R")
-tt_results <- readRDS("C:/Users/yance/OneDrive - Allied Motion Technologies Inc/Desktop/R and BI Projects/CTTA TT Analysis/data/tt_results.RDS")
-weather <- readRDS("C:/Users/yance/OneDrive - Allied Motion Technologies Inc/Desktop/R and BI Projects/CTTA TT Analysis/data/tai_tapu_weather2010-2022.RDS")
+i_am("app.R")
+
+tt_results <- readRDS(file = here("data/tt_results.RDS"))
+weather <- readRDS(file = here("data/tai_tapu_weather2010-2022.RDS"))
 
 tt_cancelled_dates <- tt_results %>% filter(rider_name == "Cancelled")
 tt_results <- tt_results %>% filter(rider_name != "Cancelled") %>% filter(rider_name_2 != "DNF")
