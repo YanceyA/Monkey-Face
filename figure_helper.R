@@ -22,7 +22,7 @@ athlete_results_plot <- function(results, athlete) {
                               geom_point(aes(fill = event), colour = "black", pch = 21, size = 4) +
                               labs(title = NULL , x = NULL, y = NULL, color = "Event\n") +
                               scale_y_time(breaks = scales::breaks_width("5 min"), limits = c(0, NA)) +
-                              scale_x_datetime(breaks = scales::breaks_width("1 year"), date_labels = "%Y")
+                              scale_x_date(breaks = scales::breaks_width("1 year"), date_labels = "%Y")
   
   tt_results_plot <- ggplotly(tt_results_plot)
 
