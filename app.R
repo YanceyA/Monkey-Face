@@ -1,12 +1,12 @@
 # Load required packages -------------------------------
-require(shiny) #
-require(shinythemes)
-require(DT) #
-require(bslib) #
-require(shinyWidgets)
-require(plotly) #
-require(packrat) #for publishing to shiny.io
-require(rsconnect) #for publishing to shiny.io
+library(shiny) #
+library(shinythemes)
+library(DT) #
+library(bslib) #
+library(shinyWidgets)
+library(plotly) #
+library(packrat) #for publishing to shiny.io
+library(rsconnect) #for publishing to shiny.io
 library(scales) #
 library(hms) #
 library(lubridate) #
