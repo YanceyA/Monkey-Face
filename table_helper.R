@@ -85,7 +85,8 @@ leaderboard_table <- function(results, gender_filter, dist_filter, bike_type_fil
   tbl_oi <- results %>% 
     dplyr::filter(gender == gender_filter) %>% 
     dplyr::filter(dist_km == dist_filter) %>% 
-    dplyr::filter(bike == bike_type_filter) %>%
+    dplyr::filter(if(ag_filter == "All") TRUE else age_group == ag_filter) %>%
+    dplyr::filter(if(bike_type_filter == "All") TRUE else bike == bike_type_filter) %>%
     dplyr::filter(if(date_filter == "All") TRUE else season == date_filter ) %>% 
     dplyr::filter(rider_name_2 != "DNF") %>% 
     dplyr::filter(rider_name != "Cancelled") %>% 

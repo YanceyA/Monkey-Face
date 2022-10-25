@@ -16,7 +16,6 @@ library(dplyr) #
 library(stringr) #
 library(forcats) #
 library(here)
-
 #Package Coverage Test
 #library(rstudioapi)
 #library(NCmisc)
@@ -127,17 +126,17 @@ tabPanel("Leaderboards",
                                    choices = c("Fastest Riders" = "riders" , "Fastest Times - Top 500" = "times"), 
                                    selected = "riders" )),
            fluidRow( radioButtons( inputId = "bike_type" , 
-                                   label = "Bike Type (in_dev_no_data)" , 
-                                   choices = c("Time Trial" = "TT" , "Road" = "road"), 
-                                   selected = "TT" )),
+                                   label = "Bike Type (2018-Current Only)" , 
+                                   choices = c("All" = "All", "Time Trial" = "TT" , "Road" = "Road"), 
+                                   selected = "All" )),
            fluidRow( radioButtons( inputId = "age_group" , 
-                                   label = "Age Group (in_dev_no_data)" , 
-                                   choices = c("All" = "all" , 
+                                   label = "Age Group (Data Incomplete)" , 
+                                   choices = c("All" = "All" , 
                                                "Elite-Senior" = "Elite-Senior", 
-                                               "U15" = "u15", 
-                                               "U17" = "u17" , 
-                                               "U19" = "u19", 
-                                               "U23" = "u23" , 
+                                               "U15" = "U15", 
+                                               "U17" = "U17" , 
+                                               "U19" = "U19", 
+                                               "U23" = "U23" , 
                                                "Masters 1" = "Masters 1", 
                                                "Masters 2" = "Masters 2", 
                                                "Masters 3" = "Masters 3", 
@@ -148,7 +147,7 @@ tabPanel("Leaderboards",
                                                "Masters 8" = "Masters 8",
                                                "Masters 9" = "Masters 9",
                                                "Masters 10" = "Masters 10"),
-                                   selected = "all" ))
+                                   selected = "All" ))
            )),
            
            column(5, 
